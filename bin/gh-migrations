@@ -1,0 +1,18 @@
+#!/usr/bin/env node
+
+var path = require('path')
+var fs = require('fs')
+
+var dir = path.dirname(fs.realpathSync(__filename))
+
+var cli = null
+try {
+  // use .js files if they exist (published module)
+  cli = require(path.join(dir, "../lib/cli"))
+} catch (err) {
+  // otherwise use the .coffee versions (development)
+  require("coffee-script/register")
+  cli = require(path.join(dir, '../src/cli'))
+}
+
+cli.run()

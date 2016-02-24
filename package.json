@@ -1,0 +1,40 @@
+{
+  "name": "gh-migrations",
+  "description": "GitHub Migrations CLI",
+  "version": "1.0.0",
+  "homepage": "https://github.com/jneill/gh-migrations",
+  "keyworks": [
+    "github",
+    "api",
+    "export",
+    "migration",
+    "migrations"
+  ],
+  "repository": "jneill/gh-migrations",
+  "author": "Jordan Neill <code@jordanneill.com>",
+  "license": "MIT",
+  "main": "./lib/index.js",
+  "bin": {
+    "gh-migrations": "./bin/gh-migrations"
+  },
+  "preferGlobal": true,
+  "scripts": {
+    "prepublish": "./node_modules/coffee-script/bin/coffee --compile --output lib/ src/"
+  },
+  "engines": {
+    "node": ">=4.0.0"
+  },
+  "dependencies": {
+    "cli-table": "^0.3.1",
+    "co": "^4.6.0",
+    "co-fs": "^1.2.0",
+    "co-request": "^1.0.0",
+    "commander": "^2.9.0",
+    "lodash": "^4.5.1",
+    "moment": "^2.11.2",
+    "request": "^2.69.0"
+  },
+  "devDependencies": {
+    "coffee-script": "^1.10.0"
+  }
+}
